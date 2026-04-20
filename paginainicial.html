@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barbutti Barbearia • Página Inicial Demo</title>
+  <style>
+    :root{
+      --bg:#0d0f14;--surface:#151922;--surface-2:#1b2130;--text:#f8f4ea;--muted:#b7ad9b;
+      --gold:#d4af62;--gold-2:#a58043;--accent:#6dc4d8;--ok:#67c08d;--warn:#e6ba72;--danger:#dd7f7f;
+      --radius:14px;--border:1px solid rgba(212,175,98,.18);--shadow:0 16px 40px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:Inter,Segoe UI,Roboto,sans-serif;background:radial-gradient(1200px 500px at 20% -10%,rgba(212,175,98,.25),transparent),var(--bg);color:var(--text)}
+    .app{display:grid;grid-template-columns:270px 1fr;min-height:100vh}
+    .sidebar{padding:1.2rem;border-right:var(--border);background:linear-gradient(180deg,#10141d,#0d0f14)}
+    .brand{display:flex;gap:.75rem;align-items:center;margin-bottom:1.2rem}
+    .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(140deg,var(--gold-2),var(--gold));box-shadow:0 6px 20px rgba(212,175,98,.35)}
+    .brand h1{font-size:1rem}.brand p{font-size:.78rem;color:var(--muted)}
+    .menu button{width:100%;text-align:left;border:none;background:transparent;color:var(--muted);padding:.72rem .8rem;border-radius:10px;cursor:pointer;margin:.15rem 0}
+    .menu button.active,.menu button:hover{background:rgba(212,175,98,.13);color:var(--text)}
+    .content{padding:1.2rem}
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+    .badge{border:var(--border);padding:.25rem .6rem;border-radius:999px;color:var(--gold);font-size:.75rem}
+    .hero{background:linear-gradient(120deg,rgba(212,175,98,.24),rgba(109,196,216,.08));border:var(--border);padding:1rem;border-radius:var(--radius);margin-bottom:1rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+    .hero img{width:160px;height:100px;object-fit:cover;border-radius:12px;border:var(--border)}
+    .grid{display:grid;gap:1rem}.grid.kpi{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:1rem}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .card{background:linear-gradient(165deg,rgba(255,255,255,.025),transparent),var(--surface);border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem}
+    .k{padding:.9rem;border:var(--border);border-radius:12px;background:var(--surface-2)} .k b{font-size:1.45rem;display:block;margin-top:.3rem}
+    .table{width:100%;border-collapse:collapse}.table th,.table td{padding:.62rem;text-align:left;border-bottom:1px solid rgba(212,175,98,.1);font-size:.92rem}
+    .tag{padding:.18rem .55rem;border-radius:999px;font-size:.72rem}.ok{background:rgba(103,192,141,.15);color:var(--ok)}.warn{background:rgba(230,186,114,.15);color:var(--warn)}.danger{background:rgba(221,127,127,.15);color:var(--danger)}
+    .view{display:none}.view.active{display:block}
+    .list{display:flex;flex-direction:column;gap:.55rem}.item{padding:.7rem;border-radius:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;gap:.8rem}
+    .form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.input,select,textarea{width:100%;background:#11151d;border:var(--border);border-radius:10px;padding:.62rem .7rem;color:var(--text)}
+    .btn{padding:.62rem .95rem;border-radius:10px;border:var(--border);background:var(--surface-2);color:var(--text);cursor:pointer}.btn.primary{background:linear-gradient(120deg,var(--gold-2),var(--gold));border:none;color:#14161c;font-weight:700}
+    @media (max-width:1080px){.grid.kpi{grid-template-columns:repeat(2,1fr)}.grid.two,.form{grid-template-columns:1fr}}
+    @media (max-width:860px){.app{grid-template-columns:1fr}.sidebar{position:sticky;top:0;z-index:2}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div><h1>Barbutti Barbearia</h1><p>SaaS Premium • Demo navegável</p></div>
+      </div>
+      <nav class="menu" id="menu"></nav>
+    </aside>
+    <main class="content">
+      <header class="topbar"><div><h2 id="title">Dashboard</h2><p style="color:var(--muted)">Frontend desacoplado pronto para n8n/webhooks</p></div><span class="badge">Mock completo</span></header>
+      <section class="hero"><div><h3 style="margin-bottom:.4rem">Experiência visual sofisticada e comercial</h3><p style="color:var(--muted)">Base fiel ao projeto: agenda, clientes, barbeiros, conversas, configurações e agendamento público.</p></div><img src="https://res.cloudinary.com/dk6okgt0a/image/upload/v1776542449/WhatsApp_Image_2026-04-17_at_21.09.05_sgbuvm.jpg" alt="Referência visual"/></section>
+
+      <section id="dashboard" class="view active"></section>
+      <section id="agenda" class="view"></section>
+      <section id="clientes" class="view"></section>
+      <section id="barbeiros" class="view"></section>
+      <section id="servicos" class="view"></section>
+      <section id="conversas" class="view"></section>
+      <section id="configuracoes" class="view"></section>
+      <section id="agendamento-publico" class="view"></section>
+    </main>
+  </div>
+
+  <script>
+    const mock = {
+      kpis:[['Agendamentos hoje','32','+11%'],['Taxa ocupação','87%','Meta 85%'],['Cancelamentos','3','-14%'],['No-show','2','-33%']],
+      agenda:[['09:00','André Costa','Lucas Mendes','confirmado'],['09:45','Caio Lima','Rafael Souza','aguardando'],['10:30','André Costa','Bruno Melo','concluído']],
+      clientes:[['Lucas Mendes','(62) 99911-2211','17/04/2026','André Costa'],['Rafael Souza','(62) 99870-8899','15/04/2026','Caio Lima']],
+      barbeiros:[['André Costa','Corte premium, barba clássica','ativo','#D4AF62'],['Caio Lima','Degradê, visagismo','ativo','#6DC4D8']],
+      servicos:[['Corte Premium','45 min','R$ 85','Cabelo'],['Barba Terapia','30 min','R$ 65','Barba']],
+      conversas:[['Lucas Mendes','Pode remarcar para 19h?','humano','19/04 18:05'],['Rafael Souza','Seu horário está confirmado ✅','bot','19/04 17:42']]
+    };
+
+    const views = [
+      ['dashboard','Dashboard'],['agenda','Agenda'],['clientes','Clientes'],['barbeiros','Barbeiros'],
+      ['servicos','Serviços'],['conversas','Conversas'],['configuracoes','Configurações'],['agendamento-publico','Agendamento Público']
+    ];
+
+    const menu = document.getElementById('menu');
+    const title = document.getElementById('title');
+    views.forEach(([id,label],idx)=>{
+      const b=document.createElement('button'); b.textContent=label; b.dataset.view=id; if(!idx) b.classList.add('active');
+      b.onclick=()=>activate(id,label,b); menu.appendChild(b);
+    });
+
+    function activate(id,label,button){
+      document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));
+      document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
+      button.classList.add('active'); title.textContent=label;
+    }
+
+    const statusTag=(s)=>`<span class="tag ${s.includes('confirm')||s.includes('conclu')?'ok':s.includes('aguard')?'warn':'danger'}">${s}</span>`;
+
+    document.getElementById('dashboard').innerHTML = `
+      <div class="grid kpi">${mock.kpis.map(k=>`<article class="k"><small style="color:var(--muted)">${k[0]}</small><b>${k[1]}</b><small style="color:var(--gold)">${k[2]}</small></article>`).join('')}</div>
+      <div class="grid two">
+        <article class="card"><h3 style="margin-bottom:.7rem">Próximos atendimentos</h3>
+          <div class="list">${mock.agenda.slice(0,2).map(a=>`<div class="item"><span>${a[0]} • ${a[2]} • ${a[1]}</span>${statusTag(a[3])}</div>`).join('')}</div>
+        </article>
+        <article class="card"><h3 style="margin-bottom:.7rem">Desempenho por barbeiro</h3>
+          <div class="list"><div class="item"><span>André Costa</span><b>R$ 1.240</b></div><div class="item"><span>Caio Lima</span><b>R$ 980</b></div></div>
+        </article>
+      </div>`;
+
+    function table(headers,rows){return `<table class="table"><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map((c,i)=>`<td>${i===r.length-1 && typeof c==='string' && ['confirmado','aguardando','concluído','cancelado'].includes(c)?statusTag(c):c}</td>`).join('')}</tr>`).join('')}</table>`}
+
+    document.getElementById('agenda').innerHTML = `<article class="card"><h3 style="margin-bottom:.7rem">Visões diária / semanal / mensal</h3>${table(['Hora','Barbeiro','Cliente','Status'],mock.agenda)}</article>`;
+    document.getElementById('clientes').innerHTML = `<article class="card"><h3 style="margin-bottom:.7rem">Cadastro de clientes</h3>${table(['Nome','WhatsApp','Último atendimento','Último barbeiro'],mock.clientes)}</article>`;
+    document.getElementById('barbeiros').innerHTML = `<article class="card"><h3 style="margin-bottom:.7rem">Equipe</h3>${table(['Nome','Especialidades','Status','Cor agenda'],mock.barbeiros)}</article>`;
+    document.getElementById('servicos').innerHTML = `<article class="card"><h3 style="margin-bottom:.7rem">Serviços</h3>${table(['Serviço','Duração','Preço','Categoria'],mock.servicos)}</article>`;
+    document.getElementById('conversas').innerHTML = `<article class="card"><h3 style="margin-bottom:.7rem">Conversas WhatsApp/Bot</h3><div class="list">${mock.conversas.map(c=>`<div class="item"><div><b>${c[0]}</b><p style="color:var(--muted)">${c[1]}</p></div><div style="text-align:right">${statusTag(c[2])}<p style="color:var(--muted);margin-top:.3rem">${c[3]}</p></div></div>`).join('')}</div></article>`;
+    document.getElementById('configuracoes').innerHTML = `<article class="card"><h3 style="margin-bottom:.7rem">Personalização da marca</h3><div class="form"><input class="input" value="Barbutti Barbearia"/><input class="input" value="https://res.cloudinary.com/..."/><input class="input" value="RGB Primária: 212,175,98"/><input class="input" value="RGB Secundária: 140,109,63"/><select><option>Confirmação automática</option><option>Aprovação pelo barbeiro</option></select><button class="btn primary">Salvar preferências</button></div></article>`;
+    document.getElementById('agendamento-publico').innerHTML = `<article class="card"><h3 style="margin-bottom:.7rem">Agendamento público (simulado)</h3><div class="form"><select><option>Escolha o barbeiro</option><option>André Costa</option><option>Caio Lima</option></select><select><option>Escolha o serviço</option><option>Corte Premium</option><option>Barba Terapia</option></select><input class="input" type="date" value="2026-04-22"/><select><option>18:30</option><option>19:15</option></select><button class="btn">Cancelar</button><button class="btn primary">Confirmar agendamento</button></div></article>`;
+  </script>
+</body>
+</html>
