@@ -1,13 +1,42 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Barbutti Barbearia • Demo SaaS</title>
-<link rel="stylesheet" href="mock/mock.css"></head>
-<body><div class="app-shell"><aside class="sidebar"><div class="brand"><div class="brand-mark"></div><div><strong>Barbutti Barbearia</strong><p>Demo comercial (GitHub Pages)</p></div></div><nav>
-<a class="nav-link" data-view="mock-dashboard">Dashboard</a><a class="nav-link" data-view="mock-agenda">Agenda</a><a class="nav-link" data-view="mock-clientes">Clientes</a><a class="nav-link" data-view="mock-barbeiros">Barbeiros</a><a class="nav-link" data-view="mock-conversas">Conversas</a><a class="nav-link" data-view="mock-config">Configurações</a><a class="nav-link" data-view="mock-publico">Agendamento Público</a>
-</nav></aside><main class="main"><header class="topbar"><div><h1>Plataforma Barbutti</h1><p>SaaS premium de gestão para barbearia</p></div><span class="badge">Mock navegável</span></header>
-<section id="mock-dashboard" class="mock-view"><div class="mock-hero"><h2>Visão executiva do dia</h2><p>Experiência premium com dados simulados realistas.</p></div><div class="grid grid-4"><article class="kpi"><p>Agendamentos</p><strong>32</strong></article><article class="kpi"><p>Ocupação</p><strong>87%</strong></article><article class="kpi"><p>No-show</p><strong>2</strong></article><article class="kpi"><p>Faturamento</p><strong>R$ 3.480</strong></article></div></section>
-<section id="mock-agenda" class="mock-view card"><h2>Agenda Visual</h2><table class="table"><tr><th>Hora</th><th>Profissional</th><th>Cliente</th><th>Status</th></tr><tr><td>10:00</td><td>André</td><td>Rafael Souza</td><td><span class="tag success">confirmado</span></td></tr><tr><td>10:45</td><td>Caio</td><td>Bruno M.</td><td><span class="tag warning">pendente</span></td></tr></table></section>
-<section id="mock-clientes" class="mock-view card"><h2>Clientes</h2><p>Cadastro completo com preferências, histórico e último barbeiro.</p></section>
-<section id="mock-barbeiros" class="mock-view card"><h2>Barbeiros</h2><p>Perfis, especialidades, cor de agenda, escala semanal e exceções.</p></section>
-<section id="mock-conversas" class="mock-view card"><h2>Conversas</h2><p>Pronto para WhatsApp/Bot via webhooks n8n em tempo real.</p></section>
-<section id="mock-config" class="mock-view card"><h2>Configurações</h2><p>Personalização total de marca: logo, favicon, RGB e tema.</p></section>
-<section id="mock-publico" class="mock-view card"><h2>Tela pública de agendamento</h2><p>Fluxo simples: barbeiro, serviço, data e horário.</p></section>
-</main></div><script src="mock/mock.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Barbutti Barbearia • Demo SaaS</title>
+  <link rel="stylesheet" href="mock/mock.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar-mock">
+      <div class="brand"><div class="brand-mark"></div><div><strong>Barbutti Barbearia</strong><p>Demo comercial (GitHub Pages)</p></div></div>
+      <nav>
+        <a class="nav-link" data-view="mock-dashboard">Dashboard</a>
+        <a class="nav-link" data-view="mock-agenda">Agenda</a>
+        <a class="nav-link" data-view="mock-clientes">Clientes</a>
+        <a class="nav-link" data-view="mock-barbeiros">Barbeiros</a>
+        <a class="nav-link" data-view="mock-conversas">Conversas</a>
+        <a class="nav-link" data-view="mock-config">Configurações</a>
+        <a class="nav-link" data-view="mock-publico">Agendamento Público</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left"><button class="mobile-menu-btn" id="mock-menu-btn">☰</button><div><h1>Plataforma Barbutti</h1><p>SaaS premium de gestão para barbearia</p></div></div>
+        <span class="badge">Mock navegável</span>
+      </header>
+      <section id="mock-dashboard" class="mock-view">
+        <div class="mock-hero"><h2>Visão executiva do dia</h2><p>Experiência premium com dados simulados realistas.</p></div>
+        <div class="grid grid-4"><article class="kpi"><p>Agendamentos</p><strong>32</strong></article><article class="kpi"><p>Ocupação</p><strong>87%</strong></article><article class="kpi"><p>No-show</p><strong>2</strong></article><article class="kpi"><p>Faturamento</p><strong>R$ 3.480</strong></article></div>
+      </section>
+      <section id="mock-agenda" class="mock-view card"><h2>Agenda Visual</h2><table class="table"><tr><th>Hora</th><th>Profissional</th><th>Cliente</th><th>Status</th></tr><tr><td>10:00</td><td>André</td><td>Rafael Souza</td><td><span class="tag success">confirmado</span></td></tr><tr><td>10:45</td><td>Caio</td><td>Bruno M.</td><td><span class="tag warning">pendente</span></td></tr></table></section>
+      <section id="mock-clientes" class="mock-view card"><h2>Clientes</h2><p>Cadastro completo com preferências, histórico e último barbeiro.</p></section>
+      <section id="mock-barbeiros" class="mock-view card"><h2>Barbeiros</h2><p>Perfis, especialidades, cor de agenda, escala semanal e exceções.</p></section>
+      <section id="mock-conversas" class="mock-view card"><h2>Conversas</h2><p>Pronto para WhatsApp/Bot via webhooks n8n em tempo real.</p></section>
+      <section id="mock-config" class="mock-view card"><h2>Configurações</h2><p>Personalização total de marca: logo, favicon, RGB e tema.</p></section>
+      <section id="mock-publico" class="mock-view card"><h2>Tela pública de agendamento</h2><p>Fluxo simples: barbeiro, serviço, data e horário.</p></section>
+    </main>
+  </div>
+  <script src="mock/mock.js"></script>
+</body>
+</html>
