@@ -7,7 +7,7 @@
   <style>
     :root{--bg:#0b0d12;--surface:#121722;--surface-2:#1a2130;--text:#f4efe4;--muted:#a89f90;--gold:#d4af62;--gold2:#9c7a44;--ok:#57bf8a;--warn:#ebc07a;--danger:#df8080;--border:1px solid rgba(212,175,98,.22)}
     *{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui;background:var(--bg);color:var(--text)}
-    .phone{width:100%;min-height:100vh;padding:1rem 1rem 6rem;background:radial-gradient(700px 200px at 20% -10%,rgba(212,175,98,.2),transparent),var(--bg)}
+    .phone{width:100%;min-height:100dvh;padding:1rem 1rem 6rem;background:radial-gradient(700px 200px at 20% -10%,rgba(212,175,98,.2),transparent),var(--bg)}
     .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}.badge{padding:.2rem .55rem;border-radius:999px;background:rgba(212,175,98,.18);color:var(--gold);font-size:.72rem}
     .card{background:var(--surface);border:var(--border);border-radius:16px;padding:1rem;margin-bottom:.8rem}.muted{color:var(--muted)}
     .kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}.k{background:var(--surface-2);border:var(--border);border-radius:12px;padding:.8rem}
@@ -18,7 +18,8 @@
     .view{display:none}.view.active{display:block}
     .tabs{position:fixed;left:0;bottom:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:.3rem;padding:.5rem .5rem calc(.6rem + env(safe-area-inset-bottom));background:#0e121a;border-top:var(--border)}
     .tabs button{background:transparent;border:none;color:var(--muted);padding:.48rem .2rem;border-radius:9px;font-size:.68rem}.tabs button.active{background:rgba(212,175,98,.12);color:var(--text)}
-  @media (min-width:900px){.phone{max-width:460px;margin:0 auto;border-left:var(--border);border-right:var(--border)}.tabs{max-width:460px;left:50%;transform:translateX(-50%);}}
+  @media (min-width:700px){.phone{width:min(100vw,calc(100dvh * 9 / 16));margin:0 auto;border-left:var(--border);border-right:var(--border)}.tabs{width:min(100vw,calc(100dvh * 9 / 16));left:50%;transform:translateX(-50%);}}
+@media (min-width:1100px){.phone{max-width:460px;width:100%;}}
   </style>
 </head>
 <body>
