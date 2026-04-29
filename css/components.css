@@ -1,0 +1,10 @@
+.kpi{padding:1rem;border-radius:12px;background:rgba(255,255,255,.02);border:var(--border)}
+.kpi strong{font-size:1.45rem;display:block;color:var(--text)}
+.tag{padding:.2rem .55rem;border-radius:999px;font-size:.72rem}
+.tag.success{background:rgba(91,185,138,.15);color:var(--success)}
+.tag.warning{background:rgba(230,185,111,.15);color:var(--warning)}
+.tag.danger{background:rgba(217,121,121,.15);color:var(--danger)}
+.list{display:flex;flex-direction:column;gap:.65rem}
+.list-item{display:flex;justify-content:space-between;padding:.7rem;border-radius:10px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04)}
+.chat-layout{display:grid;grid-template-columns:320px 1fr;gap:1rem}
+@media(max-width:950px){.chat-layout{grid-template-columns:1fr}}

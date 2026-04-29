@@ -1,0 +1,29 @@
+{
+  "login": {"username": "adminicarus", "password": "Icarus#Goias!123"},
+  "appointmentCreate": {
+    "clientId": "cli_102",
+    "barberId": "bar_001",
+    "serviceId": "srv_003",
+    "date": "2026-04-20",
+    "time": "18:30",
+    "origin": "link_publico",
+    "status": "aguardando_aprovacao",
+    "notes": "Cliente prefere navalha tradicional"
+  },
+  "barberCreate": {
+    "name": "André Costa",
+    "phone": "+55 62 99222-0001",
+    "email": "andre@barbutti.com",
+    "specialties": ["degradê", "barba clássica"],
+    "agendaColor": "#D4AF62",
+    "status": "ativo",
+    "workSchedule": {"monday": ["09:00-12:00", "14:00-19:00"]},
+    "exceptions": [{"date": "2026-04-25", "type": "folga"}]
+  },
+  "conversationMessage": {
+    "conversationId": "conv_991",
+    "authorType": "bot",
+    "text": "Seu agendamento para 18:30 foi confirmado!",
+    "sentAt": "2026-04-19T18:10:00Z"
+  }
+}
