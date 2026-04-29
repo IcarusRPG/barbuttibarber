@@ -1,7 +1,9 @@
+import { AppConfig } from '../config.js';
+
 export function injectSidebar() {
   const side = document.getElementById('sidebar');
   if (!side) return;
-  side.innerHTML = `<div class="brand"><div class="brand-mark"></div><div><strong>Barbutti</strong><p>App de Gestão</p></div></div>
+  side.innerHTML = `<div class="brand"><img class="brand-logo" src="${AppConfig.brand.logoUrl}" alt="Logo ${AppConfig.brand.name}"/><div><strong>${AppConfig.brand.name}</strong><p>App de Gestão</p></div></div>
   <nav>
     <a class="nav-link" data-route href="/pages/dashboard.html">🏠<span>Início</span></a>
     <a class="nav-link" data-route href="/pages/agenda.html">📅<span>Agenda</span></a>
