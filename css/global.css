@@ -1,0 +1,11 @@
+body{font-family:var(--font);background:radial-gradient(900px 300px at 20% -10%,rgba(212,175,98,.25),transparent),var(--bg);color:var(--text)}
+h1,h2,h3{letter-spacing:.2px}
+p,small{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.72rem .95rem;border-radius:12px;border:var(--border);background:var(--surface-2);color:var(--text);cursor:pointer;transition:.2s}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:linear-gradient(120deg,var(--primary-2),var(--primary));border:none;color:#101114;font-weight:700}
+.card{background:linear-gradient(165deg,rgba(255,255,255,.03),transparent),var(--surface);border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;overflow:auto}
+.input{width:100%;background:#0f141e;border:var(--border);border-radius:12px;padding:.72rem .8rem;color:var(--text)}
+.badge{display:inline-flex;padding:.23rem .55rem;border-radius:999px;font-size:.72rem;background:rgba(212,175,98,.15);color:var(--primary)}
+.table{width:100%;border-collapse:collapse;min-width:560px}
+.table th,.table td{padding:.65rem;border-bottom:1px solid rgba(212,175,98,.12);text-align:left}
