@@ -8,7 +8,7 @@
     :root{--bg:#0b0d12;--surface:#121722;--surface-2:#1a2130;--text:#f4efe4;--muted:#a89f90;--gold:#d4af62;--gold2:#9c7a44;--ok:#57bf8a;--warn:#ebc07a;--danger:#df8080;--border:1px solid rgba(212,175,98,.22)}
     *{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui;background:var(--bg);color:var(--text)}
     .phone{width:100%;min-height:100dvh;padding:1rem 1rem 6rem;background:radial-gradient(700px 200px at 20% -10%,rgba(212,175,98,.2),transparent),var(--bg)}
-    .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;padding:.7rem .75rem;background:rgba(18,23,34,.9);border:var(--border);border-radius:14px}.badge{padding:.27rem .65rem;border-radius:999px;background:rgba(212,175,98,.22);color:var(--gold);font-size:.78rem;font-weight:700}
+    .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;padding:1.55rem 1.2rem;background:rgba(18,23,34,.96);border:var(--border);border-radius:20px}.badge{padding:.55rem 1rem;border-radius:999px;background:rgba(212,175,98,.28);color:var(--gold);font-size:1.18rem;font-weight:800}
     .card{background:var(--surface);border:var(--border);border-radius:16px;padding:1rem;margin-bottom:.8rem}.muted{color:var(--muted)}
     .kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}.k{background:var(--surface-2);border:var(--border);border-radius:12px;padding:.8rem}
     .list{display:flex;flex-direction:column;gap:.5rem}.item{display:flex;justify-content:space-between;gap:.5rem;padding:.65rem;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05)}
@@ -16,15 +16,15 @@
     .table-wrap{overflow:auto}.table{width:100%;min-width:540px;border-collapse:collapse}.table th,.table td{padding:.56rem;border-bottom:1px solid rgba(212,175,98,.12);text-align:left}
     .form{display:grid;gap:.55rem}.input{width:100%;background:#0f141e;border:var(--border);border-radius:10px;padding:.65rem .7rem;color:var(--text)}.btn{padding:.62rem .75rem;border-radius:10px;border:var(--border);background:var(--surface-2);color:var(--text)}.btnp{background:linear-gradient(120deg,var(--gold2),var(--gold));color:#111;border:none}
     .view{display:none}.view.active{display:block}
-    .tabs{position:fixed;left:0;bottom:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:.45rem;padding:.68rem .65rem calc(1rem + env(safe-area-inset-bottom));background:#0e121a;border-top:var(--border);box-shadow:0 -8px 24px rgba(0,0,0,.45)}
-    .tabs button{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:var(--muted);padding:.6rem .3rem;border-radius:11px;font-size:.82rem;font-weight:600;min-height:54px}.tabs button.active{background:rgba(212,175,98,.2);color:var(--text);border-color:rgba(212,175,98,.45)}
+    .tabs{position:fixed;left:0;bottom:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(70px,1fr));gap:.8rem;padding:1.2rem .95rem calc(1.7rem + env(safe-area-inset-bottom));background:#0e121a;border-top:var(--border);box-shadow:0 -10px 28px rgba(0,0,0,.55)}
+    .tabs button{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--muted);padding:1.05rem .45rem;border-radius:16px;font-size:1.18rem;font-weight:800;min-height:118px}.tabs button.active{background:rgba(212,175,98,.28);color:var(--text);border-color:rgba(212,175,98,.6)}
   @media (min-width:700px){.phone{width:min(100vw,calc(100dvh * 9 / 16));margin:0 auto;border-left:var(--border);border-right:var(--border)}.tabs{width:min(100vw,calc(100dvh * 9 / 16));left:50%;transform:translateX(-50%);}}
 @media (min-width:1100px){.phone{max-width:460px;width:100%;}}
   </style>
 </head>
 <body>
   <div class="phone">
-    <header class="top"><div style="display:flex;align-items:center;gap:.65rem"><img src="https://res.cloudinary.com/dk6okgt0a/image/upload/v1776542449/WhatsApp_Image_2026-04-17_at_21.09.05_sgbuvm.jpg" alt="Logo Barbutti" style="width:54px;height:54px;border-radius:12px;object-fit:cover;border:var(--border)"><div><h2 style="font-size:1.55rem;line-height:1.05">Barbutti App</h2><p class="muted" style="font-size:1rem">Gestão mobile-first</p></div></div><span class="badge">Demo</span></header>
+    <header class="top"><div style="display:flex;align-items:center;gap:.65rem"><img src="https://res.cloudinary.com/dk6okgt0a/image/upload/v1776542449/WhatsApp_Image_2026-04-17_at_21.09.05_sgbuvm.jpg" alt="Logo Barbutti" style="width:112px;height:112px;border-radius:20px;object-fit:cover;border:var(--border)"><div><h2 style="font-size:3.05rem;line-height:1.02">Barbutti App</h2><p class="muted" style="font-size:1.55rem">Gestão mobile-first</p></div></div><span class="badge">Demo</span></header>
     <section id="dashboard" class="view active"></section>
     <section id="agenda" class="view"></section>
     <section id="clientes" class="view"></section>
