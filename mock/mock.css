@@ -1,0 +1,7 @@
+@import url('../css/reset.css');
+@import url('../css/variables.css');
+@import url('../css/global.css');
+@import url('../css/layout.css');
+@import url('../css/components.css');
+.mock-view{display:none}.mock-view.active{display:block}
+.mock-hero{padding:1rem;border-radius:14px;background:linear-gradient(120deg,rgba(212,175,98,.22),rgba(109,196,216,.1));border:var(--border);margin-bottom:1rem}
